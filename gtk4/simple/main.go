@@ -6,10 +6,6 @@ import (
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
 )
 
-func init() {
-	gtk.Init()
-}
-
 func main() {
 	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.simple", 0)
 	app.Connect("activate", activate)

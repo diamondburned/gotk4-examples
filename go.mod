@@ -3,7 +3,7 @@ module github.com/diamondburned/gotk4-examples
 go 1.17
 
 require (
-	github.com/diamondburned/gotk4/pkg v0.0.0-20210714102827-d3007ae30ea9
+	github.com/diamondburned/gotk4/pkg v0.0.0-20210715080758-856899c46689
 	github.com/gotk3/gotk3 v0.5.3-0.20210514043925-3f44af595c5e
 )
 
