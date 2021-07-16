@@ -10,7 +10,7 @@ func main() {
 	label := gtk.NewLabel("Hello from Go!")
 	label.Show()
 
-	window := gtk.NewWindow(gtk.WindowTypeToplevel)
+	window := gtk.NewWindow(gtk.WindowToplevel)
 	window.InitiallyUnowned.Connect("destroy", gtk.MainQuit)
 	window.SetTitle("gotk4 Example")
 	window.Add(label)

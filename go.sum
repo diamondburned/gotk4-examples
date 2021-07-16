@@ -2,6 +2,8 @@ github.com/diamondburned/gotk4/pkg v0.0.0-20210715080758-856899c46689 h1:yUVp4lA
 github.com/diamondburned/gotk4/pkg v0.0.0-20210715080758-856899c46689/go.mod h1:EyU+BbR4eaBNEcr6OHqTw66ROVN+T7m7RlORgSrPWXE=
 github.com/diamondburned/gotk4/pkg v0.0.0-20210715231032-a6c033031b0d h1:r2ubNbWQOjKoyXfHFxG9X0jvhv4vUKC9LiokiLfonAE=
 github.com/diamondburned/gotk4/pkg v0.0.0-20210715231032-a6c033031b0d/go.mod h1:g3UzDkxWTTcv0McQlKXeBScFhLywsH+GgwJSL7iQqk0=
+github.com/diamondburned/gotk4/pkg v0.0.0-20210716064220-07ac6b2e1c40 h1:fz2w/GkzwKvUjy3reIyFVA+M6ZPNMTCxcfrrfX7a8PY=
+github.com/diamondburned/gotk4/pkg v0.0.0-20210716064220-07ac6b2e1c40/go.mod h1:g3UzDkxWTTcv0McQlKXeBScFhLywsH+GgwJSL7iQqk0=
 github.com/gotk3/gotk3 v0.5.3-0.20210514043925-3f44af595c5e h1:+gTJ76gEbkR47suP+ANvcLl/whUwJWbDP5XvPkI3B0E=
 github.com/gotk3/gotk3 v0.5.3-0.20210514043925-3f44af595c5e/go.mod h1:/hqFpkNa9T3JgNAE2fLvCdov7c5bw//FHNZrZ3Uv9/Q=
 github.com/gotk3/gotk3 v0.6.2-0.20210715143523-dfa2afe348c5 h1:uHuevPQ/TJexoi48waAEOI1MHbY8fmS0KAI2UC9JhWE=
