@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
+	"github.com/diamondburned/gotk4/pkg/core/glib"
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
-	"github.com/gotk3/gotk3/glib"
 )
 
 func main() {

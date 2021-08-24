@@ -7,10 +7,10 @@ import (
 
 	_ "embed"
 
+	"github.com/diamondburned/gotk4/pkg/cairo"
 	"github.com/diamondburned/gotk4/pkg/gdk/v4"
 	"github.com/diamondburned/gotk4/pkg/gdkpixbuf/v2"
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
-	"github.com/gotk3/gotk3/cairo"
 )
 
 const appID = "com.github.diamondburned.gotk4-examples.gtk4.drawingarea"
