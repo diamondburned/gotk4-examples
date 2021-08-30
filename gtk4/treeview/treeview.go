@@ -28,18 +28,9 @@ func NewItemList() *ItemList {
 func (i *ItemList) Add(name, comment string) {
 	iter := i.Append()
 
-	// FIXME: doesn't seem to work
-	//listStore.Set(&iter,
-	//	[]int{COLUMN_NAME, COLUMN_COMMENT},
-	//	[]glib.Value{*glib.NewValue(name), *glib.NewValue(comment)})
-
-	i.SetValue(&iter,
-		COLUMN_NAME,
-		glib.NewValue(name))
-	i.SetValue(&iter,
-		COLUMN_COMMENT,
-		glib.NewValue(comment))
-
+	i.Set(&iter,
+		[]int{COLUMN_NAME, COLUMN_COMMENT},
+		[]glib.Value{*glib.NewValue(name), *glib.NewValue(comment)})
 }
 
 func createColumn(title string, id int) *gtk.TreeViewColumn {
