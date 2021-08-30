@@ -1,9 +1,10 @@
 package main
 
 import (
+	"os"
+
 	"github.com/diamondburned/gotk4/pkg/core/glib"
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
-	"os"
 )
 
 // IDs to access the tree view columns by
