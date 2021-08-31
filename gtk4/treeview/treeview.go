@@ -13,7 +13,7 @@ const (
 	COLUMN_COMMENT
 )
 
-// ItemList is a aimple wrapper around gtk.ListStore
+// ItemList is a thin wrapper around gtk.ListStore
 type ItemList struct {
 	*gtk.ListStore
 }
@@ -29,11 +29,11 @@ func (i *ItemList) Add(name, comment string) {
 	iter := i.Append()
 
 	i.Set(&iter,
-		[]int{COLUMN_NAME, COLUMN_COMMENT},
+		[]int32{COLUMN_NAME, COLUMN_COMMENT},
 		[]glib.Value{*glib.NewValue(name), *glib.NewValue(comment)})
 }
 
-func createColumn(title string, id int) *gtk.TreeViewColumn {
+func createColumn(title string, id int32) *gtk.TreeViewColumn {
 	cellRenderer := gtk.NewCellRendererText()
 	column := gtk.NewTreeViewColumn()
 	column.SetTitle(title)
@@ -50,7 +50,7 @@ func main() {
 	app.Connect("activate", activate)
 
 	if code := app.Run(os.Args); code > 0 {
-		os.Exit(code)
+		os.Exit(int(code))
 	}
 }
 
