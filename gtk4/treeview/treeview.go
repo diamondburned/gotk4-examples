@@ -7,39 +7,42 @@ import (
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
 )
 
-// IDs to access the tree view columns by
+// ColumnType are IDs to access the tree view columns by.
+type ColumnType int
+
 const (
-	COLUMN_NAME = iota
-	COLUMN_COMMENT
+	NameColumn ColumnType = iota
+	CommentColumn
 )
 
-// ItemList is a thin wrapper around gtk.ListStore
+// ItemList is a thin wrapper around gtk.ListStore.
 type ItemList struct {
 	*gtk.ListStore
 }
 
-// NewItemList create a new list of items
+// NewItemList create a new list of items.
 func NewItemList() *ItemList {
 	listStore := gtk.NewListStore([]glib.Type{glib.TypeString, glib.TypeString})
 	return &ItemList{listStore}
 }
 
-// Add adds a new item to the list
+// Add adds a new item to the list.
 func (i *ItemList) Add(name, comment string) {
 	iter := i.Append()
 
 	i.Set(&iter,
-		[]int32{COLUMN_NAME, COLUMN_COMMENT},
-		[]glib.Value{*glib.NewValue(name), *glib.NewValue(comment)})
+		[]int{int(NameColumn), int(CommentColumn)},
+		[]glib.Value{*glib.NewValue(name), *glib.NewValue(comment)},
+	)
 }
 
-func createColumn(title string, id int32) *gtk.TreeViewColumn {
+func createColumn(title string, id ColumnType) *gtk.TreeViewColumn {
 	cellRenderer := gtk.NewCellRendererText()
 	column := gtk.NewTreeViewColumn()
 	column.SetTitle(title)
 
 	column.PackEnd(cellRenderer, false)
-	column.AddAttribute(cellRenderer, "text", id)
+	column.AddAttribute(cellRenderer, "text", int(id))
 	column.SetResizable(true)
 
 	return column
@@ -61,14 +64,17 @@ func activate(app *gtk.Application) {
 
 	treeView := gtk.NewTreeView()
 
-	treeView.AppendColumn(createColumn("Name", COLUMN_NAME))
-	treeView.AppendColumn(createColumn("Comment", COLUMN_COMMENT))
+	treeView.AppendColumn(createColumn("Name", NameColumn))
+	treeView.AppendColumn(createColumn("Comment", CommentColumn))
 
 	items := NewItemList()
 	treeView.SetModel(items)
 	win.SetChild(&treeView.Widget)
 
 	// Add some rows to the list store
+	items.Add("hello", "Gtk4")
+	items.Add("hello", "Gtk4")
+	items.Add("hello", "Gtk4")
 	items.Add("hello", "Gtk4")
 
 	win.Show()
