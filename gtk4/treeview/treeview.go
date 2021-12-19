@@ -28,9 +28,7 @@ func NewItemList() *ItemList {
 
 // Add adds a new item to the list.
 func (i *ItemList) Add(name, comment string) {
-	iter := i.Append()
-
-	i.Set(&iter,
+	i.Set(i.Append(),
 		[]int{int(NameColumn), int(CommentColumn)},
 		[]glib.Value{*glib.NewValue(name), *glib.NewValue(comment)},
 	)
