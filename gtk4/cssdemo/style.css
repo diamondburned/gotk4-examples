@@ -1,0 +1,46 @@
+/*
+ * CSS inspired by Chrome's default stylesheet, taken from Inspect Element.
+ */
+
+@define-color borders rgb(118, 118, 118);
+
+window {
+	background-color: white;
+	color: black;
+	font-family: serif;
+	font-size: 9pt;
+	padding: 8px;
+	border:  none;
+	border-radius: 0;
+	box-shadow: none;
+	border: 1px solid @borders;
+}
+
+.title {
+	font-size:   2em;
+	font-weight: bold;
+	margin-top:    0;
+	margin-bottom: 0.67em;
+}
+
+.subtitle {
+	margin-top:    calc(1em - 0.67em); /* GTK quirk */
+	margin-bottom: 1em;
+}
+
+button,
+button:hover {
+	box-shadow: none;
+	background-color: rgb(239, 239, 239);
+	border: 1px solid @borders;
+	border-radius: 4px;
+	padding: 0px 6px;
+	margin:  0;
+	min-height: 0;
+	min-width:  0;
+	color: black;
+	font-family: sans-serif;
+}
+
+/* Intentionally harmless CSS error - check the console. */
+html {
