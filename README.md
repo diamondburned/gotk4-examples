@@ -42,6 +42,10 @@ brew install gtk4 gtk+3 gobject-introspection pkg-config
 
 ### Installing Go
 
+The minimum Go version required to run `gotk4` is 1.17. If your distribution or
+operating system does not have 1.17, follow the steps under the "Other
+OS/distros" section.
+
 #### Linux/macOS - Nix
 
 ```sh
@@ -55,7 +59,7 @@ Snippet taken from [the Go wiki](https://github.com/golang/go/wiki/Ubuntu):
 ```sh
 sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
-sudo apt install golang-go
+sudo apt install golang-go # or golang-1.17
 ```
 
 #### Other OS/distros
