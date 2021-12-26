@@ -10,10 +10,9 @@ window {
 	font-family: serif;
 	font-size: 9pt;
 	padding: 8px;
-	border:  none;
-	border-radius: 0;
 	box-shadow: none;
 	border: 1px solid @borders;
+	border-radius: 0;
 }
 
 .title {
