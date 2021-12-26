@@ -15,6 +15,12 @@ let unstable = import (systemPkgs.fetchFromGitHub {
 						sha256 = "sha256:0b9p61m7ysiny61k4c0qm3kjsjclsni81b3yrxqkhxmdyp29zy3b";
 					};
 					doCheck = false;
+					patches = [
+						# cmd/go/internal/work: concurrent ccompile routines
+						(builtins.fetchurl "https://github.com/diamondburned/go/commit/4e07fa9fe4e905d89c725baed404ae43e03eb08e.patch")
+						# cmd/cgo: concurrent file generation
+						(builtins.fetchurl "https://github.com/diamondburned/go/commit/432db23601eeb941cf2ae3a539a62e6f7c11ed06.patch")
+					];
 				});
 			})
 		];
@@ -29,7 +35,7 @@ let unstable = import (systemPkgs.fetchFromGitHub {
 	gtkPkgs = choosePkgs
 		((systemPkgs.gtk4 or null) != null && lib.versionAtLeast systemPkgs.gtk4.version "4.4.0");
 
-in systemPkgs.mkShell {
+in gtkPkgs.mkShell {
 	buildInputs = with gtkPkgs; [
 		glib
 		graphene
@@ -39,7 +45,7 @@ in systemPkgs.mkShell {
 		vulkan-headers
 	];
 
-	nativeBuildInputs = with systemPkgs; [
+	nativeBuildInputs = with gtkPkgs; [
 		# Build/generation dependencies.
 		gobjectIntrospection
 		pkgconfig
