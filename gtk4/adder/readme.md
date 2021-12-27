@@ -1,6 +1,6 @@
 # Simple Adder
 
-![.docs/example-1.png](.docs/example-1.png)
+![.docs/example.png](.docs/example.png)
 
 ## Objectives
 
