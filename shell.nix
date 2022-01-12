@@ -1,10 +1,10 @@
 { systemPkgs ? import <nixpkgs> {} }:
 
 let unstable = import (systemPkgs.fetchFromGitHub {
-		owner  = "NixOS";
-		repo   = "nixpkgs";
-		rev    = "fbfb79400a08bf754e32b4d4fc3f7d8f8055cf94";
-		sha256 = "0pgyx1l1gj33g5i9kwjar7dc3sal2g14mhfljcajj8bqzzrbc3za";
+		owner = "NixOS";
+		repo  = "nixpkgs";
+		rev   = "3fdd780";
+		hash  = "sha256:0df9v2snlk9ag7jnmxiv31pzhd0rqx2h3kzpsxpj07xns8k8dghz";
 	}) {
 		overlays = [
 			(self: super: {
@@ -26,14 +26,12 @@ let unstable = import (systemPkgs.fetchFromGitHub {
 		];
 	};
 
-	choosePkgs = system: if (system) then systemPkgs else unstable;
 	lib = systemPkgs.lib;
 
-	goPkgs = choosePkgs
-		((systemPkgs.go or null) != null && lib.versionAtLeast systemPkgs.go.version "1.17");
-
-	gtkPkgs = choosePkgs
-		((systemPkgs.gtk4 or null) != null && lib.versionAtLeast systemPkgs.gtk4.version "4.4.0");
+	gtkPkgs =
+		if ((systemPkgs.gtk4 or null) != null && lib.versionAtLeast systemPkgs.gtk4.version "4.4.0")
+		then systemPkgs
+		else unstable;
 
 in gtkPkgs.mkShell {
 	buildInputs = with gtkPkgs; [
@@ -49,7 +47,8 @@ in gtkPkgs.mkShell {
 		# Build/generation dependencies.
 		gobjectIntrospection
 		pkgconfig
-		goPkgs.go
+
+		unstable.go
 
 		# Development tools.
 		# gopls
