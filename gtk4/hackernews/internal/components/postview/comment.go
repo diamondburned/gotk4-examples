@@ -46,6 +46,8 @@ func NewComment() *Comment {
 	c.top.Append(c.top.info)
 
 	c.text = gtk.NewLabel("")
+	c.text.AddCSSClass("postview-comment-text")
+	c.text.SetSelectable(true)
 	c.text.SetXAlign(0)
 	c.text.SetWrap(true)
 	c.text.SetWrapMode(pango.WrapWordChar)
