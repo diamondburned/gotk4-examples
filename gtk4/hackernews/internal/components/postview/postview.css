@@ -1,0 +1,49 @@
+.postview-post > .frontpage-post {
+	border-bottom: 1px solid @borders;
+}
+
+.postview-post > .postview-comment-load {
+	margin: 0 2px;
+}
+
+.postview-post > .postview-comment-load:last-child {
+	margin-bottom: 8px;
+}
+
+.postview-comment-children,
+.postview-post > .postview-comment-load:nth-child(2) {
+	margin-top: 6px;
+}
+
+.postview-comment-top {
+	margin-bottom: 0.5em;
+}
+
+.postview-comment-load {
+	padding: 6px 10px;
+}
+
+.postview-comment-load:last-child {
+	padding-bottom: 0;
+}
+
+.postview-comment-children .postview-comment-load {
+	border-left: 1px solid alpha(@theme_fg_color, 0.35);
+}
+
+.postview-comment {
+	font-size: 0.95rem;
+}
+
+.postview-comment-top label {
+	color: alpha(@theme_fg_color, 0.75);
+	font-size: 0.85rem;
+}
+
+.postview-comment-reveal {
+	padding: 0;
+	margin:  0;
+	margin-left: 2px;
+	min-height: 1.25em;
+	min-width:  1.25em;
+}
