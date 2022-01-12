@@ -51,7 +51,7 @@ type markupRenderer struct {
 func (r *markupRenderer) renderNode(n *html.Node) traverseStatus {
 	switch n.Type {
 	case html.TextNode:
-		r.buf.WriteString(n.Data)
+		r.buf.WriteString(html.EscapeString(n.Data))
 		return traverseOK
 
 	case html.ElementNode:

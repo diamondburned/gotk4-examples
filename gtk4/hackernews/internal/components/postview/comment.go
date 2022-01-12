@@ -86,7 +86,7 @@ func (c *Comment) SetItem(item *hackernews.Item) {
 }
 
 func (c *Comment) update() {
-	c.text.SetText(hnhtml.ToMarkup(c.item.Text))
+	c.text.SetMarkup(hnhtml.ToMarkup(c.item.Text))
 	c.top.info.SetMarkup(html.EscapeString(c.item.By) + " " + humanize.Time(c.item.Time.Time()))
 }
 
