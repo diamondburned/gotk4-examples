@@ -105,6 +105,7 @@ func (c *Comment) Append(comment *Comment) {
 
 		c.top.rev = gtk.NewToggleButton()
 		c.top.rev.AddCSSClass("postview-comment-reveal")
+		c.top.rev.SetActive(true)
 		c.top.rev.SetHasFrame(false)
 		c.top.rev.SetIconName(commentRevealedIcon)
 		c.top.rev.ConnectClicked(func() {
