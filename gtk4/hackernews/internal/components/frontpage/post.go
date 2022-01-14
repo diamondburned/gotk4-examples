@@ -14,12 +14,6 @@ import (
 	"github.com/dustin/go-humanize"
 )
 
-// PostParent is the parent widget of the post.
-type PostParent interface {
-	gtk.Widgetter
-	ViewComments(*Post)
-}
-
 // Post is a HackerNews post widget.
 type Post struct {
 	*adaptive.LoadablePage
