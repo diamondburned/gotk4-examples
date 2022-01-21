@@ -10,6 +10,7 @@ import (
 	"github.com/diamondburned/gotk4-examples/gtk4/hackernews/internal/components/frontpage"
 	"github.com/diamondburned/gotk4-examples/gtk4/hackernews/internal/components/postview"
 	"github.com/diamondburned/gotk4-examples/gtk4/hackernews/internal/gtkutil"
+	"github.com/diamondburned/gotk4/pkg/glib/v2"
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
 )
 
@@ -26,7 +27,7 @@ func main() {
 
 	go func() {
 		<-ctx.Done()
-		app.Quit()
+		glib.IdleAdd(app.Quit)
 	}()
 
 	if code := app.Run(os.Args); code > 0 {
