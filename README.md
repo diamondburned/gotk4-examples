@@ -24,6 +24,13 @@ PRs are welcomed.
 #### Linux/macOS - Nix
 
 ```sh
+# this block used to instruct to install '... gtk4 gnome.gtk3 gobjectIntrospection ...' but since
+# recently (due to a sudden Nixpkgs change) that yields:
+#   error: The ‘gnome.gtk’ alias was removed on 2022-01-13. Please use
+#   ‘pkgs.gtk3’ directly.
+# and further:
+#   error: 'gobjectIntrospection' has been renamed to/replaced by 'gobject-introspection'
+# hence (details in https://github.com/diamondburned/gotk4-examples/pull/14):
 nix-shell -p '<nixpkgs>' gtk4 gtk3 gobject-introspection pkgconfig
 ```
 
