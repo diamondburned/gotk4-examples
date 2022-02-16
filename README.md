@@ -24,7 +24,7 @@ PRs are welcomed.
 #### Linux/macOS - Nix
 
 ```sh
-nix-shell -p '<nixpkgs>' gtk4 gnome3.gtk gobjectIntrospection pkgconfig
+nix-shell -p '<nixpkgs>' gtk4 gtk3 gobject-introspection pkgconfig
 ```
 
 #### Linux - Ubuntu
