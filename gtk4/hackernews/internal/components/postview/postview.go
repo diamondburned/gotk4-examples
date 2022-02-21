@@ -2,7 +2,7 @@ package postview
 
 import (
 	"context"
-	"runtime"
+	"time"
 
 	_ "embed"
 
@@ -59,7 +59,7 @@ func NewView(item *hackernews.Item) *View {
 
 	fetcher := commentsFetcher{
 		ctx:  ctx,
-		sema: semaphore.NewWeighted(int64(runtime.GOMAXPROCS(-1))),
+		sema: semaphore.NewWeighted(8),
 	}
 	go fetcher.fetch(&v, item.Kids)
 
@@ -72,11 +72,6 @@ type commentsFetcher struct {
 }
 
 func (f *commentsFetcher) fetch(parent CommentAppender, ids []hackernews.ItemID) {
-	if err := f.sema.Acquire(f.ctx, 1); err != nil {
-		return
-	}
-	defer f.sema.Release(1)
-
 	for _, id := range ids {
 		select {
 		case <-f.ctx.Done():
@@ -84,32 +79,52 @@ func (f *commentsFetcher) fetch(parent CommentAppender, ids []hackernews.ItemID)
 		default:
 		}
 
-		item, err := hackernews.DefaultClient.Item(f.ctx, id)
-		if f.ctx.Err() != nil {
-			// Context expired; don't do anything.
+		f.fetchOne(parent, id)
+	}
+}
+
+func (f *commentsFetcher) fetchOne(parent CommentAppender, id hackernews.ItemID) {
+	if err := f.sema.Acquire(f.ctx, 1); err != nil {
+		return
+	}
+	defer f.sema.Release(1)
+
+	item, err := hackernews.DefaultClient.Item(f.ctx, id)
+	if f.ctx.Err() != nil {
+		// Context expired; don't do anything.
+		return
+	}
+
+	if item != nil && item.Text == "" {
+		// The comment's content is empty for some reason. Ignore it.
+		return
+	}
+
+	glib.IdleAdd(func() {
+		comment := NewComment()
+		parent.Append(comment)
+
+		if err != nil {
+			comment.SetError(err)
 			return
 		}
 
-		if item != nil && item.Text == "" {
-			// The comment's content is empty for some reason. Ignore it.
-			return
+		comment.SetItem(item)
+
+		if len(item.Kids) > 0 {
+			go f.fetch(comment, item.Kids)
 		}
+	})
 
-		glib.IdleAdd(func() {
-			comment := NewComment()
-			parent.Append(comment)
+	// Add a bit of delay. The user doesn't read this fast, usually.
+	sleep(f.ctx, 250*time.Millisecond)
+}
 
-			if err != nil {
-				comment.SetError(err)
-				return
-			}
-
-			comment.SetItem(item)
-
-			if len(item.Kids) > 0 {
-				go f.fetch(comment, item.Kids)
-			}
-		})
+func sleep(ctx context.Context, d time.Duration) {
+	timer := time.NewTimer(d)
+	select {
+	case <-timer.C:
+	case <-ctx.Done():
 	}
 }
 
