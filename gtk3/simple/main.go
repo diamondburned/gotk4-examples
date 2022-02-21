@@ -11,7 +11,7 @@ func main() {
 	label.Show()
 
 	window := gtk.NewWindow(gtk.WindowToplevel)
-	window.InitiallyUnowned.Connect("destroy", gtk.MainQuit)
+	window.ConnectDestroy(gtk.MainQuit)
 	window.SetTitle("gotk4 Example")
 	window.Add(label)
 	window.SetDefaultSize(400, 300)

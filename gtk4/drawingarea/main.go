@@ -20,7 +20,7 @@ var trollfacePNG []byte
 
 func main() {
 	app := gtk.NewApplication(appID, 0)
-	app.Connect("activate", activate)
+	app.ConnectActivate(func() { activate(app) })
 
 	if code := app.Run(os.Args); code > 0 {
 		os.Exit(code)
@@ -50,7 +50,7 @@ func activate(app *gtk.Application) {
 	})
 
 	motionCtrl := gtk.NewEventControllerMotion()
-	motionCtrl.Connect("motion", func(_ *gtk.EventControllerMotion, x, y float64) {
+	motionCtrl.ConnectMotion(func(x, y float64) {
 		state.X = x
 		state.Y = y
 		drawArea.QueueDraw()

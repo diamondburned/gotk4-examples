@@ -11,7 +11,7 @@ const appID = "com.github.diamondburned.gotk4-examples.gtk4.drawingareamouseposi
 
 func main() {
 	app := gtk.NewApplication(appID, 0)
-	app.Connect("activate", activate)
+	app.ConnectActivate(func() { activate(app) })
 
 	if code := app.Run(os.Args); code > 0 {
 		os.Exit(code)
@@ -25,7 +25,7 @@ func activate(app *gtk.Application) {
 	labelY.SetXAlign(0)
 
 	motionCtrl := gtk.NewEventControllerMotion()
-	motionCtrl.Connect("motion", func(_ *gtk.EventControllerMotion, x, y float64) {
+	motionCtrl.ConnectMotion(func(x, y float64) {
 		labelX.SetLabel(fmt.Sprintf("X: %f", x))
 		labelY.SetLabel(fmt.Sprintf("Y: %f", y))
 	})

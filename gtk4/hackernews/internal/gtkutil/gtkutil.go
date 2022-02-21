@@ -34,7 +34,7 @@ func LoadCSS() {
 		content := globalCSS.String()
 
 		prov := gtk.NewCSSProvider()
-		prov.Connect("parsing-error", func(sec *gtk.CSSSection, err error) {
+		prov.ConnectParsingError(func(sec *gtk.CSSSection, err error) {
 			// Optional line parsing routine.
 			loc := sec.StartLocation()
 			lines := strings.Split(content, "\n")

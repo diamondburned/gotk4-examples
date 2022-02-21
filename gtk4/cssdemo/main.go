@@ -17,7 +17,7 @@ var styleCSS string
 
 func main() {
 	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.cssdemo", 0)
-	app.Connect("activate", activate)
+	app.ConnectActivate(func() { activate(app) })
 
 	if code := app.Run(os.Args); code > 0 {
 		os.Exit(code)
@@ -65,7 +65,7 @@ func activate(app *gtk.Application) {
 
 func loadCSS(content string) *gtk.CSSProvider {
 	prov := gtk.NewCSSProvider()
-	prov.Connect("parsing-error", func(sec *gtk.CSSSection, err error) {
+	prov.ConnectParsingError(func(sec *gtk.CSSSection, err error) {
 		// Optional line parsing routine.
 		loc := sec.StartLocation()
 		lines := strings.Split(content, "\n")

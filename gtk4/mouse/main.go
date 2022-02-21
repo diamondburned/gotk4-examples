@@ -14,7 +14,7 @@ const appID = "com.github.diamondburned.gotk4-examples.gtk4.mouse"
 
 func main() {
 	app := gtk.NewApplication(appID, 0)
-	app.Connect("activate", activate)
+	app.ConnectActivate(func() { activate(app) })
 
 	if code := app.Run(os.Args); code > 0 {
 		os.Exit(code)
@@ -53,7 +53,7 @@ func activate(app *gtk.Application) {
 
 	// Pressed is a signal that's emitted everytime the button is pressed down
 	// (but not released - it's not a full click).
-	gesture.Connect("pressed", func(gesture *gtk.GestureClick, n int, x, y float64) {
+	gesture.ConnectPressed(func(n int, x, y float64) {
 		click.NPress = n
 		click.X = x
 		click.Y = y

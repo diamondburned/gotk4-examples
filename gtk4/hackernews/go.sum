@@ -1,7 +1,8 @@
 github.com/diamondburned/adaptive v0.0.2-0.20220112080859-3636e96e0c60 h1:lMJeMZfz3mnc6rLn45N1oWC30ubrwouhj5m1at5KQkg=
 github.com/diamondburned/adaptive v0.0.2-0.20220112080859-3636e96e0c60/go.mod h1:1bhSWaLf1C6TPd4YvkIvlPVkDKOXQZILBoWO0rWf9Jg=
-github.com/diamondburned/gotk4/pkg v0.0.0-20211231035909-9969b912d153 h1:WChqrh+WxFPDqwHDkm/J5TFjtUp9Io3RkqlqrAsg8NM=
 github.com/diamondburned/gotk4/pkg v0.0.0-20211231035909-9969b912d153/go.mod h1:dJ2gfR0gvBsGg4IteP8aMBq/U5Q9boDw0DP7kAjXTwM=
+github.com/diamondburned/gotk4/pkg v0.0.0-20220221063304-bbd86ac49f1b h1:k8jeCc8QOob32c95RcDGekTbdBMbHG0I7ZpkfUpC3PM=
+github.com/diamondburned/gotk4/pkg v0.0.0-20220221063304-bbd86ac49f1b/go.mod h1:dJ2gfR0gvBsGg4IteP8aMBq/U5Q9boDw0DP7kAjXTwM=
 github.com/dustin/go-humanize v1.0.0 h1:VSnTsYCnlFHaM2/igO1h6X3HA71jcobQuxemgkq4zYo=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 go4.org/unsafe/assume-no-moving-gc v0.0.0-20201222180813-1025295fd063 h1:1tk03FUNpulq2cuWpXZWj649rwJpk0d20rxWiopKRmc=
