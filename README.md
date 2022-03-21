@@ -34,6 +34,12 @@ sudo apt install libgtk-3-dev # 18.04 (bionic) or later
 sudo apt install libgtk-4-dev # 21.04 (hirsuit) or later
 ```
 
+#### Linux - Fedora
+
+```sh
+sudo dnf install gtk4-devel gobject-introspection-devel
+```
+
 #### macOS
 
 ```sh
@@ -61,6 +67,17 @@ sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
 sudo apt install golang-go # or golang-1.17
 ```
+
+#### Linux - Fedora
+
+```sh
+sudo dnf install golang
+```
+
+The [packaged version of Go](https://src.fedoraproject.org/rpms/golang) on
+Fedora  is usually a few versions behind upstream on non-rawhide branches,
+so you might want to manually install Go using the installation instructions
+mentioned below.
 
 #### Other OS/distros
 
