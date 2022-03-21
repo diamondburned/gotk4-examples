@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<!DOCTYPE cambalache-project SYSTEM "cambalache-project.dtd">
+<cambalache-project version="0.8.2" target_tk="gtk-4.0">
+  <ui>
+	(1,None,"main.ui","main.ui",None,None,None,None,None,None)
+  </ui>
+  <object>
+	(1,1,"GtkWindow","MainWindow",None,None,None,None,None),
+	(1,2,"GtkButton","Button",1,None,None,None,-1)
+  </object>
+  <object_property>
+	(1,1,"GtkWindow","default-height","300",None,None,None,None),
+	(1,1,"GtkWindow","default-width","300",None,None,None,None),
+	(1,1,"GtkWindow","resizable","False",None,None,None,None),
+	(1,1,"GtkWindow","title","gotk4 builder example",None,None,None,None),
+	(1,2,"GtkButton","label","Press me",None,None,None,None)
+  </object_property>
+</cambalache-project>

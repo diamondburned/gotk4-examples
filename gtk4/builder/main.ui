@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Created with Cambalache 0.8.2 -->
+<interface>
+  <!-- interface-name main.ui -->
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkWindow" id="MainWindow">
+    <property name="default-height">300</property>
+    <property name="default-width">300</property>
+    <property name="resizable">False</property>
+    <property name="title">gotk4 builder example</property>
+    <child>
+      <object class="GtkButton" id="Button">
+        <property name="label">Press me</property>
+      </object>
+    </child>
+  </object>
+</interface>
