@@ -9,17 +9,17 @@ let unstable = import (systemPkgs.fetchFromGitHub {
 		overlays = [
 			(self: super: {
 				go = super.go.overrideAttrs (old: {
-					version = "1.17";
+					version = "1.18";
 					src = builtins.fetchurl {
-						url    = "https://golang.org/dl/go1.17.linux-amd64.tar.gz";
-						sha256 = "sha256:0b9p61m7ysiny61k4c0qm3kjsjclsni81b3yrxqkhxmdyp29zy3b";
+						url    = "https://golang.org/dl/go1.18.linux-amd64.tar.gz";
+						sha256 = "0kr6h1ddaazibxfkmw7b7jqyqhskvzjyc2c4zr8b3kapizlphlp8";
 					};
 					doCheck = false;
 					patches = [
 						# cmd/go/internal/work: concurrent ccompile routines
-						(builtins.fetchurl "https://github.com/diamondburned/go/commit/4e07fa9fe4e905d89c725baed404ae43e03eb08e.patch")
+						(builtins.fetchurl "https://github.com/diamondburned/go/commit/ec3e1c9471f170187b6a7c83ab0364253f895c28.patch")
 						# cmd/cgo: concurrent file generation
-						(builtins.fetchurl "https://github.com/diamondburned/go/commit/432db23601eeb941cf2ae3a539a62e6f7c11ed06.patch")
+						(builtins.fetchurl "https://github.com/diamondburned/go/commit/50e04befeca9ae63296a73c8d5d2870b904971b4.patch")
 					];
 				});
 			})
@@ -55,6 +55,7 @@ in gtkPkgs.mkShell {
 		# goimports
 	];
 
+	NIX_DEBUG_INFO_DIRS = ''${gtkPkgs.gtk4.debug}/lib/debug:${gtkPkgs.glib.debug}/lib/debug'';
 	CGO_ENABLED = "1";
 
 	TMP    = "/tmp";
