@@ -47,7 +47,7 @@ func createColumn(title string, id ColumnType) *gtk.TreeViewColumn {
 }
 
 func main() {
-	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.treeview", 0)
+	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.treeview", gio.ApplicationFlags(gio.ApplicationFlagsNone))
 	app.ConnectActivate(func() { activate(app) })
 
 	if code := app.Run(os.Args); code > 0 {
