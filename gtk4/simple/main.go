@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.simple", gio.ApplicationFlags(gio.ApplicationFlagsNone))
+	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.simple", gio.ApplicationFlagsNone)
 	app.ConnectActivate(func() { activate(app) })
 
 	if code := app.Run(os.Args); code > 0 {
