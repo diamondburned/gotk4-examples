@@ -13,7 +13,7 @@ import (
 const appID = "com.github.diamondburned.gotk4-examples.gtk4.mouse"
 
 func main() {
-	app := gtk.NewApplication(appID, 0)
+	app := gtk.NewApplication(appID, gio.ApplicationFlags(gio.ApplicationFlagsNone))
 	app.ConnectActivate(func() { activate(app) })
 
 	if code := app.Run(os.Args); code > 0 {
