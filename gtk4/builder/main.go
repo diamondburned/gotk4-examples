@@ -7,6 +7,7 @@ import (
 	_ "embed"
 
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
+	"github.com/diamondburned/gotk4/pkg/gio/v2"
 )
 
 //go:embed main.ui
