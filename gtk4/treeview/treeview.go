@@ -5,6 +5,7 @@ import (
 
 	"github.com/diamondburned/gotk4/pkg/core/glib"
 	"github.com/diamondburned/gotk4/pkg/gtk/v4"
+	"github.com/diamondburned/gotk4/pkg/gio/v2"
 )
 
 // ColumnType are IDs to access the tree view columns by.
