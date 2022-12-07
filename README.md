@@ -27,6 +27,12 @@ PRs are welcomed.
 nix-shell -p '<nixpkgs>' gtk4 gnome3.gtk gobjectIntrospection pkgconfig
 ```
 
+#### Linux - Arch
+
+```sh
+sudo pacman -S gtk4 gobject-introspection
+```
+
 #### Linux - Ubuntu
 
 ```sh
