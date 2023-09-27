@@ -46,6 +46,12 @@ sudo apt install libgtk-4-dev # 21.04 (hirsuit) or later
 sudo dnf install gtk4-devel gobject-introspection-devel
 ```
 
+#### Linux - openSUSE
+
+```sh
+sudo zypper install gtk4-devel gobject-introspection-devel
+```
+
 #### macOS
 
 ```sh
@@ -84,6 +90,12 @@ The [packaged version of Go](https://src.fedoraproject.org/rpms/golang) on
 Fedora  is usually a few versions behind upstream on non-rawhide branches,
 so you might want to manually install Go using the installation instructions
 mentioned below.
+
+#### Linux - openSUSE
+
+```sh
+sudo zypper install go
+```
 
 #### Other OS/distros
 
