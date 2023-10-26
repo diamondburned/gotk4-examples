@@ -38,14 +38,14 @@ in gtkPkgs.mkShell {
 		glib
 		graphene
 		gdk-pixbuf
-		gnome3.gtk
+		gtk3
 		gtk4
 		vulkan-headers
 	];
 
 	nativeBuildInputs = with gtkPkgs; [
 		# Build/generation dependencies.
-		gobjectIntrospection
+		gobject-introspection
 		pkgconfig
 
 		unstable.go
