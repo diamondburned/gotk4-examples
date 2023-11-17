@@ -6,8 +6,8 @@ on:
     - cron: '0 0 * * *' # daily
 
 jobs:
-  bump:
-    name: 
+  update:
+    name: Update Dependencies
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -21,10 +21,27 @@ jobs:
 
       - name: Update dependencies
         run: |
-          go get -u
+          go get -u ./...
           go mod tidy
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Bump go4.org/unsafe/assume-no-moving-gc
+
+  build:
+    name: Build
+    needs: update
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Install Nix shell
+        uses: diamondburned/cache-install@main
+        with:
+          shell-file: shell.nix
+
+      - name: Build
+        run: go build ./...
