@@ -4,7 +4,7 @@ go 1.21.0
 
 toolchain go1.21.6
 
-require github.com/diamondburned/gotk4/pkg v0.2.1
+require github.com/diamondburned/gotk4/pkg v0.2.2
 
 require (
 	github.com/KarpelesLab/weak v0.1.1 // indirect
