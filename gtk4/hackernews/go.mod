@@ -1,13 +1,18 @@
 module github.com/diamondburned/gotk4-examples/gtk4/hackernews
 
-go 1.17
+go 1.21.0
+
+toolchain go1.21.7
 
 require (
 	github.com/diamondburned/adaptive v0.0.2-0.20220112080859-3636e96e0c60
-	github.com/diamondburned/gotk4/pkg v0.0.0-20220221063304-bbd86ac49f1b
+	github.com/diamondburned/gotk4/pkg v0.2.2
 	github.com/dustin/go-humanize v1.0.0
 	golang.org/x/net v0.0.0-20220111093109-d55c255bac03
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+	golang.org/x/sync v0.6.0
 )
 
-require go4.org/unsafe/assume-no-moving-gc v0.0.0-20220617031537-928513b29760 // indirect
+require (
+	github.com/KarpelesLab/weak v0.1.1 // indirect
+	go4.org/unsafe/assume-no-moving-gc v0.0.0-20231121144256-b99613f794b6 // indirect
+)

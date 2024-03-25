@@ -19,11 +19,16 @@ jobs:
         with:
           shell-file: shell.nix
 
+      - name: Update Go Workspace
+        run: |
+          go work use $(find . -name go.mod -exec dirname {} \;)
+
       - name: Update dependencies
         run: |
           go get -u ./...
           go get go4.org/unsafe/assume-no-moving-gc@latest
           go mod tidy
+          go work sync
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
