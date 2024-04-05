@@ -24,7 +24,11 @@ PRs are welcomed.
 #### Linux/macOS - Nix
 
 ```sh
-nix-shell -p '<nixpkgs>' gtk4 gnome3.gtk gobjectIntrospection pkgconfig
+# Nix channels:
+nix-shell -p gtk4 gtk3 gobject-introspection pkg-config
+
+# Nix flakes (very slow):
+nix shell nixpkgs#gtk4 nixpkgs#gtk3 nixpkgs#gobject-introspection nixpkgs#pkg-config
 ```
 
 #### Linux - Arch
