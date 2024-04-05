@@ -1,4 +1,4 @@
-# gotk4 Examples
+# ``gotk4`` Examples
 
 This repository provides examples on using GTK4 and GTK3 using the
 [gotk4][gotk4] bindings.
@@ -67,17 +67,17 @@ OS/distros" section.
 #### Linux/macOS - Nix
 
 ```sh
-nix-shell # will grab both Go and all GTK dependencies
+nix-shell # will get both Go and all GTK dependencies
 ```
 
-#### Linux - Ubuntu
+#### Linux - Ubuntu / Debian Based
 
 Snippet taken from [the Go wiki](https://github.com/golang/go/wiki/Ubuntu):
 
 ```sh
 sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
-sudo apt install golang-go # or golang-1.17
+sudo apt install golang-go # OR golang-1.17
 ```
 
 #### Linux - Fedora
@@ -99,7 +99,7 @@ sudo zypper install go
 
 #### Other OS/distros
 
-Follow [doc/install](https://go.dev/doc/install) for more information.
+Follow [the go docs](https://go.dev/doc/install) for more information.
 
 ### Running Examples
 
@@ -111,5 +111,5 @@ go run -v ./gtk4/simple
 ```
 
 **Important:** if you don't run with `-v`, you might start wondering if `go run`
-is hung or not. Always keep in mind that building `gotk4` will be very slow at
+is hung or not. Always keep in mind that building `gotk4` will be **very slow** at
 first, and **the slow building is normal**.
