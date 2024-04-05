@@ -58,6 +58,12 @@ sudo zypper install gtk4-devel gobject-introspection-devel
 brew install gtk4 gtk+3 gobject-introspection pkg-config
 ```
 
+#### Windows - Msys2
+
+```sh
+pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-gtk4 mingw-w64-x86_64-gobject-introspection
+```
+
 ### Installing Go
 
 The minimum Go version required to run `gotk4` is 1.17. If your distribution or
