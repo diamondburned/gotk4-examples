@@ -70,14 +70,21 @@ pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-gtk4 mingw-w64-x86_64-gobj
 
 ### Installing Go
 
-The minimum Go version required to run `gotk4` is 1.17. If your distribution or
-operating system does not have 1.17, follow the steps under the "Other
+The minimum Go version required to run `gotk4` is 1.21. If your distribution or
+operating system does not have 1.21, follow the steps under the "Other
 OS/distros" section.
 
 #### Linux/macOS - Nix
 
 ```sh
-nix-shell # will grab both Go and all GTK dependencies
+# Installing just Go:
+nix-env -iA nixpkgs.go
+
+# Dropping into a shell with Go:
+nix-shell -p go
+
+# Using gotk4-nix's shell, which will also grab GTK dependencies:
+nix-shell
 ```
 
 #### Linux - Ubuntu
