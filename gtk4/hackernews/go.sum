@@ -1,7 +1,7 @@
 github.com/KarpelesLab/weak v0.1.1 h1:fNnlPo3aypS9tBzoEQluY13XyUfd/eWaSE/vMvo9s4g=
 github.com/diamondburned/adaptive v0.0.2-0.20220112080859-3636e96e0c60 h1:lMJeMZfz3mnc6rLn45N1oWC30ubrwouhj5m1at5KQkg=
 github.com/diamondburned/adaptive v0.0.2-0.20220112080859-3636e96e0c60/go.mod h1:1bhSWaLf1C6TPd4YvkIvlPVkDKOXQZILBoWO0rWf9Jg=
-github.com/diamondburned/gotk4/pkg v0.2.2 h1:6EBtg/7uhnN/sCJd7rZdc+PqMXmnEaEDNIC9K/hTZfQ=
+github.com/diamondburned/gotk4/pkg v0.3.0 h1:6PvqjIfZ4MOp1KG30mmsL6mqo6jCvR5SaGP8fwczQr0=
 github.com/dustin/go-humanize v1.0.0 h1:VSnTsYCnlFHaM2/igO1h6X3HA71jcobQuxemgkq4zYo=
 github.com/dustin/go-humanize v1.0.0/go.mod h1:HtrtbFcZ19U5GC7JDqmcUSB87Iq5E25KnS6fMYU6eOk=
 go4.org/unsafe/assume-no-moving-gc v0.0.0-20231121144256-b99613f794b6 h1:lGdhQUN/cnWdSH3291CUuxSEqc+AsGTiDxPP3r2J0l4=
