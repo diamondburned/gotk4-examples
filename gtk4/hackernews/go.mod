@@ -9,7 +9,7 @@ require (
 	github.com/diamondburned/gotk4/pkg v0.3.1
 	github.com/dustin/go-humanize v1.0.0
 	golang.org/x/net v0.0.0-20220111093109-d55c255bac03
-	golang.org/x/sync v0.10.0
+	golang.org/x/sync v0.11.0
 )
 
 require (
