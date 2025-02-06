@@ -24,7 +24,7 @@ func main() {
 
 func activate(app *gtk.Application) {
 	// You can build UIs using Cambalache (https://flathub.org/apps/details/ar.xjuan.Cambalache)
-	builder := gtk.NewBuilderFromString(uiXML, len(uiXML))
+	builder := gtk.NewBuilderFromString(uiXML)
 
 	// MainWindow and Button are object IDs from the UI file
 	window := builder.GetObject("MainWindow").Cast().(*gtk.Window)
