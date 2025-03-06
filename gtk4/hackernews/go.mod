@@ -1,15 +1,15 @@
 module github.com/diamondburned/gotk4-examples/gtk4/hackernews
 
-go 1.21.0
+go 1.23.0
 
-toolchain go1.21.7
+toolchain go1.23.6
 
 require (
 	github.com/diamondburned/adaptive v0.0.2-0.20220112080859-3636e96e0c60
 	github.com/diamondburned/gotk4/pkg v0.3.1
 	github.com/dustin/go-humanize v1.0.0
 	golang.org/x/net v0.0.0-20220111093109-d55c255bac03
-	golang.org/x/sync v0.11.0
+	golang.org/x/sync v0.12.0
 )
 
 require (
