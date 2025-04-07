@@ -1,0 +1,12 @@
+using Gtk 4.0;
+using Adw 1;
+
+Gtk.Window MyMainWindow {
+  default-width: 300;
+  default-height: 300;
+  title: _("gotk4 blueprint example");
+
+  Label MyLabel {
+    label: _("This window was generated from a Blueprint using go generate");
+  }
+}
