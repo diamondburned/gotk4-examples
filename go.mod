@@ -1,10 +1,8 @@
 module github.com/diamondburned/gotk4-examples
 
-go 1.23.0
+go 1.24.0
 
-toolchain go1.23.6
-
-require github.com/diamondburned/gotk4/pkg v0.3.1
+require github.com/diamondburned/gotk4/pkg v0.4.0
 
 require (
 	github.com/KarpelesLab/weak v0.1.1 // indirect
