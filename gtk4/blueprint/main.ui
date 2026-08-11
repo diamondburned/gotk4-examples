@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <object class="GtkWindow" id="MyMainWindow">
+    <property name="default-width">300</property>
+    <property name="default-height">300</property>
+    <property name="title" translatable="true">gotk4 blueprint example</property>
+    <child>
+      <object class="GtkBox">
+        <property name="margin-start">30</property>
+        <property name="margin-end">30</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="true">Run </property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="selectable">true</property>
+            <property name="label" translatable="true">go generate ./gtk4/blueprint</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label" translatable="true"> to generate the UI file from the Blueprint and restart this app.</property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
