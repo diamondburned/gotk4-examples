@@ -2,10 +2,6 @@ module github.com/diamondburned/gotk4-examples
 
 go 1.24.0
 
-require github.com/diamondburned/gotk4/pkg v0.4.0
+require github.com/diamondburned/gotk4/pkg v0.4.2-0.20261031204942-a6ab0d7b121f
 
-require (
-	github.com/KarpelesLab/weak v0.1.1 // indirect
-	go4.org/unsafe/assume-no-moving-gc v0.0.0-20231121144256-b99613f794b6 // indirect
-	golang.org/x/sync v0.13.0 // indirect
-)
+require golang.org/x/sync v0.13.0 // indirect
