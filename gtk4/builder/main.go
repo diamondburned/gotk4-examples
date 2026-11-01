@@ -14,7 +14,7 @@ import (
 var uiXML string
 
 func main() {
-	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.builder", gio.ApplicationFlagsNone)
+	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.builder", gio.ApplicationDefaultFlags)
 	app.ConnectActivate(func() { activate(app) })
 
 	if code := app.Run(os.Args); code > 0 {

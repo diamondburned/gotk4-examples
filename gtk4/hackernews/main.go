@@ -19,7 +19,7 @@ func main() {
 	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer cancel()
 
-	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.hackernews", gio.ApplicationFlagsNone)
+	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.hackernews", gio.ApplicationDefaultFlags)
 	app.ConnectActivate(func() {
 		gtkutil.LoadCSS()
 		hn := newHackerNews(ctx, app)

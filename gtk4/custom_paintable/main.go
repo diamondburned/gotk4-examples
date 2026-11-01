@@ -144,7 +144,7 @@ func generateCheckerboard(width, height, cellSize int) *image.RGBA {
 }
 
 func main() {
-	app := gtk.NewApplication("com.example.custompaintable", gio.ApplicationFlagsNone)
+	app := gtk.NewApplication("com.example.custompaintable", gio.ApplicationDefaultFlags)
 	app.ConnectActivate(func() {
 		win := gtk.NewApplicationWindow(app)
 		win.SetTitle("Custom Paintable (Go image.Image -> GTK)")

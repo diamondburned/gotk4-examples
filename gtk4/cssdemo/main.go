@@ -17,7 +17,7 @@ import (
 var styleCSS string
 
 func main() {
-	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.cssdemo", gio.ApplicationFlagsNone)
+	app := gtk.NewApplication("com.github.diamondburned.gotk4-examples.gtk4.cssdemo", gio.ApplicationDefaultFlags)
 	app.ConnectActivate(func() { activate(app) })
 
 	if code := app.Run(os.Args); code > 0 {
