@@ -1,0 +1,37 @@
+name: QA
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: "${{ github.event_name }} / test"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Xvfb
+        run: sudo apt-get update && sudo apt-get install -y xvfb xauth x11-xserver-utils
+
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Setup Go build cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: go-build-nix-${{ github.run_id }}
+          restore-keys: |
+            go-build-nix-
+            go-build-
+
+      - name: Run tests with CC=clang
+        run: xvfb-run -a env CC=clang go test -v ./...
+        shell: nix develop -c bash -e {0}
+
+      - name: Build examples with CC=clang
+        run: env CC=clang go build ./...
+        shell: nix develop -c bash -e {0}
