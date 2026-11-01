@@ -47,5 +47,5 @@ func activate(app *gtk.Application) {
 	window.SetTitle("drawingareamouseposition - gotk4 Example")
 	window.SetChild(grid)
 	window.SetDefaultSize(640, 480)
-	window.Show()
+	window.Present()
 }

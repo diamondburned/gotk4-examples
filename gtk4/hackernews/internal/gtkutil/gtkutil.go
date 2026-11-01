@@ -40,7 +40,7 @@ func LoadCSS() {
 			lines := strings.Split(content, "\n")
 			log.Printf("CSS error (%v) at line: %q", err, lines[loc.Lines()])
 		})
-		prov.LoadFromData(content)
+		prov.LoadFromString(content)
 
 		// Load the CSS and apply it globally.
 		gtk.StyleContextAddProviderForDisplay(

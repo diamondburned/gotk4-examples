@@ -59,7 +59,7 @@ func activate(app *gtk.Application) {
 	window.SetChild(box)
 	window.SetTitlebar(gtk.NewBox(gtk.OrientationVertical, 0)) // hide headerbar
 	window.SetDefaultSize(400, 300)
-	window.Show()
+	window.Present()
 
 	close.ConnectClicked(window.Close)
 }
@@ -72,6 +72,6 @@ func loadCSS(content string) *gtk.CSSProvider {
 		lines := strings.Split(content, "\n")
 		log.Printf("CSS error (%v) at line: %q", err, lines[loc.Lines()])
 	})
-	prov.LoadFromData(content)
+	prov.LoadFromString(content)
 	return prov
 }

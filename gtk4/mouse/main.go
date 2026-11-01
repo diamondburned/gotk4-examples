@@ -83,5 +83,5 @@ func activate(app *gtk.Application) {
 	window.SetDefaultSize(200, 200)
 	window.SetTitle("mouse - gotk4 Example")
 	window.SetChild(overlay)
-	window.Show()
+	window.Present()
 }

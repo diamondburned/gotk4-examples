@@ -37,5 +37,5 @@ func activate(app *gtk.Application) {
 	})
 
 	app.AddWindow(window)
-	window.Show()
+	window.Present()
 }

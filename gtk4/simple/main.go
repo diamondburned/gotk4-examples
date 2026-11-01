@@ -21,5 +21,5 @@ func activate(app *gtk.Application) {
 	window.SetTitle("gotk4 Example")
 	window.SetChild(gtk.NewLabel("Hello from Go!"))
 	window.SetDefaultSize(400, 300)
-	window.Show()
+	window.Present()
 }

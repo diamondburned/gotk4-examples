@@ -36,7 +36,7 @@ func activate(app *gtk.Application) {
 	window.SetTitle("gotk4 Example")
 	window.SetChild(box)
 	window.SetDefaultSize(400, 300)
-	window.Show()
+	window.Present()
 
 	go func() {
 		var ix int

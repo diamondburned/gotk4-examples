@@ -56,5 +56,5 @@ func activate(app *gtk.Application) {
 	})
 
 	lbl.AddController(drop)
-	window.Show()
+	window.Present()
 }

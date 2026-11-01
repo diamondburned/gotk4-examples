@@ -76,5 +76,5 @@ func activate(app *gtk.Application) {
 	items.Add("hello", "Gtk4")
 	items.Add("hello", "Gtk4")
 
-	win.Show()
+	win.Present()
 }

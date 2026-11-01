@@ -62,7 +62,7 @@ func activate(app *gtk.Application) {
 	window.SetTitle("drawingarea - gotk4 Example")
 	window.SetChild(drawArea)
 	window.SetDefaultSize(640, 480)
-	window.Show()
+	window.Present()
 }
 
 func loadPNG(data []byte) (*gdkpixbuf.Pixbuf, error) {
